@@ -22,25 +22,39 @@ Spring MVCフレームワークを使用したJava Webアプリケーション�
 
 ### 1. ユーザー管理機能
 - **ユーザー登録**: 新規ユーザー登録（バリデーション機能付き）
+<img width="627" height="781" alt="image" src="https://github.com/user-attachments/assets/cf73c87e-03d9-4d1b-b8fc-cd3983aac9b3" />
 - **ログイン/ログアウト**: セッション管理による認証機能
+<img width="506" height="543" alt="image" src="https://github.com/user-attachments/assets/0dfb4478-2226-4eed-a030-2e478cdd7de5" />
 - **プロフィール表示**: ユーザー情報の確認
+<img width="766" height="610" alt="image" src="https://github.com/user-attachments/assets/0e72ce37-e318-42b7-aa5a-0a54fbe28faf" />
 
 ### 2. 掲示板機能
 - **投稿作成**: タイトル、本文、ゲームコード、画像の投稿
+<img width="664" height="776" alt="image" src="https://github.com/user-attachments/assets/cf7a8ada-8818-43ad-a01b-53560f785d26" />
+
 - **投稿一覧表示**: グリッドレイアウトによる視覚的な一覧表示
+<img width="1901" height="846" alt="image" src="https://github.com/user-attachments/assets/22d10741-9220-42b4-85c3-be8a962c73d0" />
+
 - **投稿詳細表示**: 投稿内容、ゲーム実行、ソースコード表示
+<img width="582" height="854" alt="image" src="https://github.com/user-attachments/assets/eb8c440b-54a2-4514-92da-4b3d8cc75808" />
+
 - **投稿編集・削除**: 作成者のみが編集・削除可能
+<img width="532" height="789" alt="image" src="https://github.com/user-attachments/assets/b50fcb41-5706-40ca-8e58-9cdbb1aae39a" />
 
 ### 3. コメント機能
 - **コメント投稿**: 投稿に対するコメント機能
-- **コメント編集・削除**: 作成者のみが編集・削除可能
+<img width="570" height="374" alt="image" src="https://github.com/user-attachments/assets/513500ea-860b-41f6-a07e-2cdb523c96c1" />
+- **コメント削除**: 作成者のみが編集・削除可能
+<img width="1134" height="648" alt="image" src="https://github.com/user-attachments/assets/7aba4577-8449-4223-ab22-d7d520abd8c2" />
 
 ### 4. ゲーム実行機能（独自機能）
 - **iframe sandboxによる安全な実行環境**: ユーザーが投稿したHTML/CSS/JavaScriptコードを安全に実行
 - **ソースコード表示**: 投稿されたゲームコードを閲覧可能
 - **動的ロード**: JavaScriptによる動的なゲームコードの読み込み
+<img width="1919" height="1006" alt="image" src="https://github.com/user-attachments/assets/14089332-e595-425b-9575-bde3f1c04895" />
 
 ### 5. 画像アップロード機能
+<img width="1005" height="180" alt="image" src="https://github.com/user-attachments/assets/44bf06a7-faab-495e-8d91-85b1139d9527" />
 - **画像アップロード**: マルチパートファイルアップロード処理
 - **サムネイル表示**: 投稿一覧での画像サムネイル表示
 - **画像削除**: 投稿編集時の画像削除機能
