@@ -1,115 +1,108 @@
-# Spring MVC 커뮤니티 사이트 프로젝트
+# ゲームコミュニティサイト
 
-Spring MVC 프레임워크를 사용한 Java 웹 애플리케이션 프로젝트입니다.
+Spring MVCフレームワークを使用したJava Webアプリケーションです。ユーザーが作成したゲームコードを共有し、実行できるコミュニティプラットフォームです。
 
-## 개발 환경
+## 📋 プロジェクト概要
 
-- **Java**: JDK 11 이상
-- **프레임워크**: Spring Framework 5.3.21
-- **빌드 도구**: Maven 3.6 이상
-- **데이터베이스**: MariaDB
-- **서버**: Apache Tomcat 7 이상
+### 開発の動機と背景
 
-## STS(Spring Tool Suite)에서 실행하는 방법
+コンピューターに最初に興味を持ったきっかけは、多くの人と同じようにゲームでした。小学校のコンピューター室でFlashゲームを楽しんでいた純粋な喜びが、やがてコンピューターソフトウェア学科を卒業するきっかけとなりました。
 
-### 1단계: 프로젝트 임포트
+ある時、情熱が冷めてしまった自分を見て「私は何のためにコンピューターを勉強したのか」と自問したことがあります。今振り返ると、あの時純粋に感じた楽しさを他の人と共有し、より良いサービスを世の中に提供する人になるためにコンピューターを勉強していたのだと思います。
 
-1. **STS 실행**
-   - Spring Tool Suite를 실행합니다.
+そこで、純粋にコンピューターを好きだった幼い頃の自分に、そして私のように純粋にコンピューターを好きな人たちに、あの時の純粋さを贈りたいと思い、幼い頃コンピューター室で楽しんだゲームを共有できるコミュニティサイトを開発することにしました。
 
-2. **프로젝트 임포트**
-   - `File` → `Import` 선택
-   - `Maven` → `Existing Maven Projects` 선택
-   - `Next` 클릭
+### プロジェクトの目的
 
-3. **프로젝트 디렉토리 선택**
-   - `Browse` 버튼 클릭
-   - 프로젝트 루트 디렉토리(`backend_project`) 선택
-   - `pom.xml` 파일이 자동으로 인식됩니다
-   - `Finish` 클릭
+- **ゲームコードの共有**: ユーザーが作成したHTML/CSS/JavaScriptゲームコードを共有できるプラットフォームの提供
+- **コミュニティ形成**: ゲーム開発に興味を持つ人々が交流できる場の創出
+- **技術学習**: Webアプリケーション開発の基本スキルを実践的に学習
 
-4. **Maven 프로젝트 업데이트**
-   - 프로젝트를 우클릭 → `Maven` → `Update Project...`
-   - `Force Update of Snapshots/Releases` 체크
-   - `OK` 클릭하여 의존성 다운로드
+## 🎯 主な機能
 
-### 2단계: 데이터베이스 설정
+### 1. ユーザー管理機能
+- **ユーザー登録**: 新規ユーザー登録（バリデーション機能付き）
+- **ログイン/ログアウト**: セッション管理による認証機能
+- **プロフィール表示**: ユーザー情報の確認
 
-1. **MariaDB 데이터베이스 생성**
-   ```sql
-   CREATE DATABASE communitydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-   ```
+### 2. 掲示板機能
+- **投稿作成**: タイトル、本文、ゲームコード、画像の投稿
+- **投稿一覧表示**: グリッドレイアウトによる視覚的な一覧表示
+- **投稿詳細表示**: 投稿内容、ゲーム実行、ソースコード表示
+- **投稿編集・削除**: 作成者のみが編集・削除可能
 
-2. **데이터베이스 연결 설정 확인**
-   - `src/main/webapp/WEB-INF/spring/root-context.xml` 파일 확인
-   - 데이터베이스 URL, 사용자명, 비밀번호가 올바른지 확인
+### 3. コメント機能
+- **コメント投稿**: 投稿に対するコメント機能
+- **コメント編集・削除**: 作成者のみが編集・削除可能
 
-### 3단계: 서버 설정
+### 4. ゲーム実行機能（独自機能）
+- **iframe sandboxによる安全な実行環境**: ユーザーが投稿したHTML/CSS/JavaScriptコードを安全に実行
+- **ソースコード表示**: 投稿されたゲームコードを閲覧可能
+- **動的ロード**: JavaScriptによる動的なゲームコードの読み込み
 
-1. **Tomcat 서버 추가**
-   - `Servers` 탭에서 우클릭 → `New` → `Server`
-   - `Apache` → `Tomcat v7.0 Server` (또는 설치된 버전) 선택
-   - `Next` 클릭
-   - Tomcat 설치 경로 선택 (없으면 다운로드)
-   - `Finish` 클릭
+### 5. 画像アップロード機能
+- **画像アップロード**: マルチパートファイルアップロード処理
+- **サムネイル表示**: 投稿一覧での画像サムネイル表示
+- **画像削除**: 投稿編集時の画像削除機能
 
-2. **프로젝트를 서버에 추가**
-   - `Servers` 탭에서 생성한 Tomcat 서버를 우클릭
-   - `Add and Remove...` 선택
-   - 왼쪽에서 `community-site` 프로젝트 선택
-   - `Add >` 버튼 클릭하여 오른쪽으로 이동
-   - `Finish` 클릭
+## 🛠️ 使用技術・スキル
 
-3. **서버 설정**
-   - 서버를 우클릭 → `Properties`
-   - `General` → `Runtime Environment`에서 Java 11 이상 선택
-   - `Ports`에서 HTTP 포트 확인 (기본값: 8080)
+### プログラミング言語
+- **Java 11**: メインの開発言語
+- **JavaScript**: フロントエンドの動的処理
+- **SQL**: データベース操作
 
-### 4단계: 프로젝트 빌드
+### フレームワーク・ライブラリ
+- **Spring Framework 5.3.21**: 
+  - Spring MVC（Web層）
+  - Spring JDBC（データアクセス層）
+  - Spring Transaction（トランザクション管理）
+- **JSP/JSTL**: ビュー層の実装
 
-1. **프로젝트 빌드**
-   - 프로젝트를 우클릭 → `Run As` → `Maven build...`
-   - `Goals`에 `clean package` 입력
-   - `Run` 클릭
-   - 빌드가 완료될 때까지 대기
+### データベース
+- **MariaDB**: リレーショナルデータベース
+  - ユーザー情報、投稿、コメントの管理
 
-2. **빌드 확인**
-   - `target` 폴더에 `community-site-1.0.0.war` 파일이 생성되었는지 확인
+### ビルドツール・サーバー
+- **Maven 3.6以上**: プロジェクトのビルドと依存関係管理
+- **Apache Tomcat 7**: アプリケーションサーバー
 
-### 5단계: 서버 실행
+### その他の技術
+- **Apache Commons FileUpload**: ファイルアップロード処理
+- **Jackson**: JSON処理
+- **SLF4J + Logback**: ロギング
 
-1. **서버 시작**
-   - `Servers` 탭에서 Tomcat 서버를 우클릭
-   - `Start` 선택
-   - 또는 서버를 선택하고 상단의 재생 버튼(▶) 클릭
+## 💡 こだわったポイント・技術的な挑戦
 
-2. **실행 확인**
-   - 콘솔에 서버 시작 메시지 확인
-   - 다음과 같은 메시지가 보이면 성공:
-     ```
-     Server startup in [시간] milliseconds
-     ```
+### 1. MVCアーキテクチャの実装
+- **明確な責務分離**: Controller、Service、DAO層を明確に分離し、保守性の高いコード構造を実現
+- **トランザクション管理**: Springのトランザクション管理機能を活用し、データ整合性を保証
 
-### 6단계: 브라우저에서 접속
+### 2. セキュリティ対策
+- **iframe sandbox属性の活用**: ユーザーが投稿したゲームコードを安全に実行するため、iframeのsandbox属性を使用
+  - `allow-scripts`: JavaScript実行を許可
+  - `allow-forms`: フォーム送信を許可
+  - `allow-popups`: ポップアップを許可
+  - `allow-modals`: モーダルダイアログを許可
+  - `allow-same-origin`は意図的に除外し、セキュリティを強化
 
-1. **웹 브라우저 열기**
-   - 브라우저에서 다음 주소로 접속:
-     ```
-     http://localhost:8080
-     ```
+### 3. 画像アップロード機能の実装
+- **ファイル検証**: 画像ファイルのみを許可（JPG, PNG, GIF, WebP, BMP）
+- **UUIDによる一意なファイル名生成**: ファイル名の衝突を防止
+- **動的画像配信**: ImageControllerによる画像の動的配信
+- **Tomcat 7互換性**: `setContentLengthLong`メソッドが使用できないため、`setContentLength`を使用するなど、サーバー互換性を考慮
 
-2. **홈페이지 확인**
-   - 게시글 목록이 표시되면 정상 작동합니다
+### 4. ゲームコード実行機能の実装
+- **完全なHTMLドキュメントのサポート**: ユーザーが投稿した完全なHTMLドキュメントをiframe内で実行
+- **動的ロード**: JavaScriptによる安全なコードの動的読み込み
+- **ソースコード表示**: 投稿されたゲームコードを閲覧可能にする機能
 
-## 주요 기능
+### 5. ユーザー体験の向上
+- **レスポンシブデザイン**: モバイルデバイスでも快適に閲覧可能
+- **視覚的なUI**: モダンなデザインと直感的な操作
+- **エラーハンドリング**: 適切なエラーメッセージの表示
 
-- **회원 관리**: 회원가입, 로그인, 로그아웃, 프로필 조회
-- **게시판**: 게시글 작성, 조회, 수정, 삭제, 목록 조회
-- **댓글**: 댓글 작성, 수정, 삭제
-- **게임 실행**: HTML/CSS/JavaScript 게임 코드 실행 기능
-- **이미지 업로드**: 게시글 썸네일 이미지 업로드 및 표시
-
-## 프로젝트 구조
+## 📁 プロジェクト構造
 
 ```
 backend_project/
@@ -117,65 +110,285 @@ backend_project/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com/community/
-│   │   │       ├── controller/    # 컨트롤러
-│   │   │       ├── service/       # 서비스 레이어
-│   │   │       ├── dao/          # 데이터 접근 객체
-│   │   │       ├── model/        # 모델 클래스
-│   │   │       └── util/         # 유틸리티 클래스
+│   │   │       ├── controller/    # コントローラー層（リクエスト処理）
+│   │   │       │   ├── HomeController.java
+│   │   │       │   ├── UserController.java
+│   │   │       │   ├── PostController.java
+│   │   │       │   ├── CommentController.java
+│   │   │       │   └── ImageController.java
+│   │   │       ├── service/       # サービス層（ビジネスロジック）
+│   │   │       │   ├── UserService.java
+│   │   │       │   ├── PostService.java
+│   │   │       │   └── CommentService.java
+│   │   │       ├── dao/          # データアクセス層（DAO）
+│   │   │       │   ├── UserDao.java
+│   │   │       │   ├── PostDao.java
+│   │   │       │   └── CommentDao.java
+│   │   │       ├── model/        # モデルクラス（エンティティ）
+│   │   │       │   ├── User.java
+│   │   │       │   ├── Post.java
+│   │   │       │   └── Comment.java
+│   │   │       └── util/         # ユーティリティクラス
+│   │   │           └── FileUploadUtil.java
 │   │   ├── resources/
-│   │   │   ├── schema.sql        # 데이터베이스 스키마
-│   │   │   └── data.sql          # 초기 데이터
+│   │   │   ├── schema.sql        # データベーススキーマ
+│   │   │   └── data.sql          # 初期データ
 │   │   └── webapp/
 │   │       ├── WEB-INF/
-│   │       │   ├── web.xml
+│   │       │   ├── web.xml       # Webアプリケーション設定
 │   │       │   ├── spring/
-│   │       │   │   ├── root-context.xml
+│   │       │   │   ├── root-context.xml      # Springルートコンテキスト
 │   │       │   │   └── appServlet/
-│   │       │   │       └── servlet-context.xml
-│   │       │   └── views/        # JSP 뷰 파일
-│   │       └── resources/        # 정적 리소스
+│   │       │   │       └── servlet-context.xml  # Spring MVC設定
+│   │       │   └── views/        # JSPビューファイル
+│   │       │       ├── home.jsp
+│   │       │       ├── layout/
+│   │       │       ├── post/
+│   │       │       └── user/
+│   │       └── resources/        # 静的リソース（画像など）
 │   └── test/
-└── pom.xml                        # Maven 설정 파일
+└── pom.xml                        # Maven設定ファイル
 ```
 
-## 문제 해결
+## 🚀 実行方法
 
-### 포트 8080이 이미 사용 중인 경우
-- `Servers` 탭에서 서버를 우클릭 → `Properties`
-- `Ports`에서 HTTP 포트를 `8081` 등으로 변경
+### 前提条件
+- JDK 11以上
+- Maven 3.6以上
+- MariaDB（データベース）
+- Apache Tomcat 7以上
 
-### 컴파일 오류 발생 시
-- 프로젝트를 우클릭 → `Maven` → `Update Project...`
-- `Force Update of Snapshots/Releases` 체크 후 `OK`
-- `Project` → `Clean...` → 프로젝트 선택 → `Clean`
+### STS(Spring Tool Suite)での実行方法
 
-### 데이터베이스 연결 오류 시
-- `root-context.xml`에서 데이터베이스 연결 정보 확인
-- MariaDB 서버가 실행 중인지 확인
-- 데이터베이스가 생성되어 있는지 확인
+#### 1. プロジェクトのインポート
+1. STSを起動
+2. `File` → `Import` → `Maven` → `Existing Maven Projects`
+3. プロジェクトルートディレクトリを選択
+4. `Maven` → `Update Project...`で依存関係をダウンロード
 
-### 서버가 시작되지 않는 경우
-- `Servers` 탭에서 서버를 삭제하고 다시 추가
-- `Window` → `Preferences` → `Server` → `Runtime Environments`에서 Tomcat 경로 확인
+#### 2. データベース設定
+```sql
+CREATE DATABASE communitydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
 
-## 실행 스크립트 사용 (대안)
+#### 3. サーバー設定
+1. `Servers`タブでTomcatサーバーを追加
+2. プロジェクトをサーバーに追加
+3. サーバーを起動
 
-명령줄에서 실행하려면:
+#### 4. ブラウザでアクセス
+```
+http://localhost:8080
+```
 
+### コマンドラインでの実行
 ```bash
 # Windows
 run.bat
 
 # PowerShell
 run.ps1
-```
 
-또는 직접 Maven 명령어 사용:
-
-```bash
+# または直接Mavenコマンド
 mvn clean package tomcat7:run
 ```
 
-## 라이선스
+## 📊 データベース設計
 
-이 프로젝트는 교육 목적으로 제작되었습니다.
+### データベース作成
+
+```sql
+-- データベース作成
+CREATE DATABASE communitydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- データベース使用
+USE communitydb;
+```
+
+### テーブル構成
+
+#### 1. usersテーブル（ユーザー情報）
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+    user_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    nickname VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
+
+**カラム説明**:
+- `user_id`: ユーザーID（主キー、自動増分）
+- `username`: ユーザー名（一意制約）
+- `password`: パスワード
+- `email`: メールアドレス
+- `nickname`: ニックネーム
+- `created_at`: 作成日時
+- `updated_at`: 更新日時
+
+#### 2. postsテーブル（投稿情報）
+
+```sql
+CREATE TABLE IF NOT EXISTS posts (
+    post_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    title VARCHAR(200) NOT NULL,
+    content TEXT NOT NULL,
+    game_code TEXT,
+    image_url VARCHAR(500),
+    view_count INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+```
+
+**カラム説明**:
+- `post_id`: 投稿ID（主キー、自動増分）
+- `user_id`: ユーザーID（外部キー、usersテーブル参照）
+- `title`: 投稿タイトル
+- `content`: 投稿本文
+- `game_code`: ゲームコード（HTML/CSS/JavaScript）
+- `image_url`: 画像URL（サムネイル用）
+- `view_count`: 閲覧数（デフォルト: 0）
+- `created_at`: 作成日時
+- `updated_at`: 更新日時
+
+#### 3. commentsテーブル（コメント情報）
+
+```sql
+CREATE TABLE IF NOT EXISTS comments (
+    comment_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    post_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (post_id) REFERENCES posts(post_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+```
+
+**カラム説明**:
+- `comment_id`: コメントID（主キー、自動増分）
+- `post_id`: 投稿ID（外部キー、postsテーブル参照）
+- `user_id`: ユーザーID（外部キー、usersテーブル参照）
+- `content`: コメント内容
+- `created_at`: 作成日時
+- `updated_at`: 更新日時
+
+### インデックス作成
+
+```sql
+-- パフォーマンス向上のためのインデックス
+CREATE INDEX idx_posts_user_id ON posts(user_id);
+CREATE INDEX idx_posts_created_at ON posts(created_at DESC);
+CREATE INDEX idx_comments_post_id ON comments(post_id);
+CREATE INDEX idx_comments_user_id ON comments(user_id);
+```
+
+### ER図（テーブル関係）
+
+```
+users (1) ──────< (N) posts
+                      │
+                      │ (1)
+                      │
+                      │
+                      └───────< (N) comments
+                      │
+users (1) ────────────┘
+```
+
+**リレーションシップ**:
+- `users` と `posts`: 1対多（1人のユーザーが複数の投稿を作成可能）
+- `posts` と `comments`: 1対多（1つの投稿に複数のコメントが可能）
+- `users` と `comments`: 1対多（1人のユーザーが複数のコメントを投稿可能）
+
+### 外部キー制約
+
+- **CASCADE削除**: ユーザーが削除されると、そのユーザーの投稿とコメントも自動的に削除される
+- **データ整合性**: 外部キー制約により、存在しないユーザーIDや投稿IDへの参照を防止
+
+### サンプルデータ（テスト用）
+
+```sql
+-- テスト用ユーザーデータ
+INSERT INTO users (username, password, email, nickname) VALUES
+('admin', 'admin123', 'admin@example.com', '管理者'),
+('user1', 'user123', 'user1@example.com', 'ユーザー1'),
+('user2', 'user123', 'user2@example.com', 'ユーザー2');
+
+-- テスト用投稿データ
+INSERT INTO posts (user_id, title, content, view_count) VALUES
+(1, 'コミュニティへようこそ！', 'こちらはコミュニティサイトです。自由に投稿してください。', 10),
+(2, '最初の投稿です', 'こんにちは！最初の投稿を書きました。', 5),
+(3, 'Spring MVCについて', 'Spring MVCフレームワークを使用してこのサイトを作成しました。', 8);
+
+-- テスト用コメントデータ
+INSERT INTO comments (post_id, user_id, content) VALUES
+(1, 2, 'ようこそ！'),
+(1, 3, '良いコミュニティですね。'),
+(2, 1, '最初の投稿おめでとうございます！');
+```
+
+## 🎓 学習したスキル・技術
+
+### Webアプリケーション開発の基本スキル
+- ✅ **ログイン機能の実装**: セッション管理による認証機能
+- ✅ **フォーム処理**: POST/GETリクエストの処理、バリデーション
+- ✅ **データベース機能**: JDBCを使用したCRUD操作
+- ✅ **セキュリティ機能**: iframe sandboxによる安全なコード実行
+- ✅ **ファイルアップロード**: マルチパートファイルの処理
+- ✅ **テンプレート機能**: JSPによる動的コンテンツ生成
+
+### アーキテクチャ・設計パターン
+- ✅ **MVCパターン**: 責務の明確な分離
+- ✅ **DAOパターン**: データアクセス層の抽象化
+- ✅ **サービス層パターン**: ビジネスロジックの集約
+
+## 🔧 開発で苦労した点・解決方法
+
+### 1. 画像サムネイル機能の実装
+**問題**: 画像が正しく表示されない（500エラー）
+**解決方法**: 
+- `servlet-context.xml`の誤った`mvc:resources`設定を削除
+- `ImageController`による動的画像配信を実装
+- Tomcat 7互換性のため`setContentLengthLong`を`setContentLength`に変更
+
+### 2. iframe sandboxのセキュリティ警告
+**問題**: `allow-scripts`と`allow-same-origin`の組み合わせによるセキュリティ警告
+**解決方法**: 
+- `allow-same-origin`を削除し、セキュリティを強化
+- ゲームコードが外部リソースにアクセスしない前提で実装
+
+### 3. 完全なHTMLドキュメントの実行
+**問題**: ユーザーが投稿した完全なHTMLドキュメントがiframe内で正しく実行されない
+**解決方法**: 
+- JavaScriptによる動的なコード読み込みを実装
+- hidden textareaを使用して安全にコードを渡す方法を採用
+
+## 📝 今後の改善予定
+
+- [ ] パスワードのハッシュ化（現在は平文保存）
+- [ ] ページネーション機能の追加
+- [ ] 検索機能の実装
+- [ ] いいね機能の追加
+- [ ] ユーザー間のフォロー機能
+
+## 📄 ライセンス
+
+このプロジェクトは教育目的で作成されました。
+
+## 👤 開発者
+
+このプロジェクトは、Webアプリケーション開発の基本スキルを学習するために作成されました。
+
+---
+
+**ポートフォリオとしての位置づけ**: 
+このプロジェクトは、実務経験はありませんが、Webアプリケーション開発に必要な基本スキル（ログイン機能、フォーム処理、データベース操作、セキュリティ対策など）を有していることを示すために作成しました。現在のWebシステムで広く使用されている技術を実践的に学習し、独自の機能（ゲームコード実行機能）も追加することで、技術力と創造性をアピールできる作品となっています。
