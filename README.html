@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームコミュニティサイト - ポートフォリオ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.6;
+    color: #24292f;
+    background-color: #ffffff;
+    padding: 40px;
+    max-width: 1012px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #d0d7de;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #d0d7de;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+ul, ol {
+    margin-bottom: 16px;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 85%;
+    background-color: rgba(175, 184, 193, 0.2);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 85%;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+    overflow: auto;
+    margin-bottom: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    font-size: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 16px 0;
+    display: block;
+}
+
+blockquote {
+    padding: 0 1em;
+    color: #656d76;
+    border-left: 0.25em solid #d0d7de;
+    margin-bottom: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+table th,
+table td {
+    border: 1px solid #d0d7de;
+    padding: 6px 13px;
+}
+
+table th {
+    background-color: #f6f8fa;
+    font-weight: 600;
+}
+
+a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #d0d7de;
+    border: 0;
+}
+
+@media print {
+    body {
+        padding: 20px;
+    }
+    
+    img {
+        page-break-inside: avoid;
+        max-width: 100%;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>ゲームコミュニティサイト</h1>
+<p>Spring MVCフレームワークを使用したJava Webアプリケーションです。ユーザーが作成したゲームコードを共有し、実行できるコミュニティプラットフォームです。</p>
+<h2>📋 プロジェクト概要</h2>
+<h3>開発の動機と背景</h3>
+<p>コンピューターに最初に興味を持ったきっかけは、多くの人と同じようにゲームでした。小学校のコンピューター室でFlashゲームを楽しんでいた純粋な喜びが、やがてコンピューターソフトウェア学科を卒業するきっかけとなりました。</p>
+<p>ある時、情熱が冷めてしまった自分を見て「私は何のためにコンピューターを勉強したのか」と自問したことがあります。今振り返ると、あの時純粋に感じた楽しさを他の人と共有し、より良いサービスを世の中に提供する人になるためにコンピューターを勉強していたのだと思います。</p>
+<p>そこで、純粋にコンピューターを好きだった幼い頃の自分に、そして私のように純粋にコンピューターを好きな人たちに、あの時の純粋さを贈りたいと思い、幼い頃コンピューター室で楽しんだゲームを共有できるコミュニティサイトを開発することにしました。</p>
+<h3>プロジェクトの目的</h3>
+<ul>
+<li><strong>ゲームコードの共有</strong>: ユーザーが作成したHTML/CSS/JavaScriptゲームコードを共有できるプラットフォームの提供</li>
+<li><strong>コミュニティ形成</strong>: ゲーム開発に興味を持つ人々が交流できる場の創出</li>
+<li><strong>技術学習</strong>: Webアプリケーション開発の基本スキルを実践的に学習</li>
+</ul>
+<h2>🎯 主な機能</h2>
+<h3>1. ユーザー管理機能</h3>
+<ul>
+<li><strong>ユーザー登録</strong>: 新規ユーザー登録（バリデーション機能付き）
+<img src="https://github.com/user-attachments/assets/cf73c87e-03d9-4d1b-b8fc-cd3983aac9b3" alt="image" style="max-width: 100%; height: auto;" /></li>
+<li><strong>ログイン/ログアウト</strong>: セッション管理による認証機能
+<img src="https://github.com/user-attachments/assets/0dfb4478-2226-4eed-a030-2e478cdd7de5" alt="image" style="max-width: 100%; height: auto;" /></li>
+<li><strong>プロフィール表示</strong>: ユーザー情報の確認
+<img src="https://github.com/user-attachments/assets/0e72ce37-e318-42b7-aa5a-0a54fbe28faf" alt="image" style="max-width: 100%; height: auto;" /></li>
+</ul>
+<h3>2. 掲示板機能</h3>
+<ul>
+<li>
+<p><strong>投稿作成</strong>: タイトル、本文、ゲームコード、画像の投稿
+<img src="https://github.com/user-attachments/assets/cf7a8ada-8818-43ad-a01b-53560f785d26" alt="image" style="max-width: 100%; height: auto;" /></p>
+</li>
+<li>
+<p><strong>投稿一覧表示</strong>: グリッドレイアウトによる視覚的な一覧表示
+<img src="https://github.com/user-attachments/assets/22d10741-9220-42b4-85c3-be8a962c73d0" alt="image" style="max-width: 100%; height: auto;" /></p>
+</li>
+<li>
+<p><strong>投稿詳細表示</strong>: 投稿内容、ゲーム実行、ソースコード表示
+<img src="https://github.com/user-attachments/assets/eb8c440b-54a2-4514-92da-4b3d8cc75808" alt="image" style="max-width: 100%; height: auto;" /></p>
+</li>
+<li>
+<p><strong>投稿編集・削除</strong>: 作成者のみが編集・削除可能
+<img src="https://github.com/user-attachments/assets/b50fcb41-5706-40ca-8e58-9cdbb1aae39a" alt="image" style="max-width: 100%; height: auto;" /></p>
+</li>
+</ul>
+<h3>3. コメント機能</h3>
+<ul>
+<li><strong>コメント投稿</strong>: 投稿に対するコメント機能
+<img src="https://github.com/user-attachments/assets/513500ea-860b-41f6-a07e-2cdb523c96c1" alt="image" style="max-width: 100%; height: auto;" /></li>
+<li><strong>コメント削除</strong>: 作成者のみが編集・削除可能
+<img src="https://github.com/user-attachments/assets/7aba4577-8449-4223-ab22-d7d520abd8c2" alt="image" style="max-width: 100%; height: auto;" /></li>
+</ul>
+<h3>4. ゲーム実行機能（独自機能）</h3>
+<ul>
+<li><strong>iframe sandboxによる安全な実行環境</strong>: ユーザーが投稿したHTML/CSS/JavaScriptコードを安全に実行</li>
+<li><strong>ソースコード表示</strong>: 投稿されたゲームコードを閲覧可能</li>
+<li><strong>動的ロード</strong>: JavaScriptによる動的なゲームコードの読み込み
+<img src="https://github.com/user-attachments/assets/14089332-e595-425b-9575-bde3f1c04895" alt="image" style="max-width: 100%; height: auto;" /></li>
+</ul>
+<h3>5. 画像アップロード機能</h3>
+<img src="https://github.com/user-attachments/assets/44bf06a7-faab-495e-8d91-85b1139d9527" alt="image" style="max-width: 100%; height: auto;" />
+- **画像アップロード**: マルチパートファイルアップロード処理
+- **サムネイル表示**: 投稿一覧での画像サムネイル表示
+- **画像削除**: 投稿編集時の画像削除機能
+<h2>🛠️ 使用技術・スキル</h2>
+<h3>プログラミング言語</h3>
+<ul>
+<li><strong>Java 11</strong>: メインの開発言語</li>
+<li><strong>JavaScript</strong>: フロントエンドの動的処理</li>
+<li><strong>SQL</strong>: データベース操作</li>
+</ul>
+<h3>フレームワーク・ライブラリ</h3>
+<ul>
+<li><strong>Spring Framework 5.3.21</strong>:
+<ul>
+<li>Spring MVC（Web層）</li>
+<li>Spring JDBC（データアクセス層）</li>
+<li>Spring Transaction（トランザクション管理）</li>
+</ul>
+</li>
+<li><strong>JSP/JSTL</strong>: ビュー層の実装</li>
+</ul>
+<h3>データベース</h3>
+<ul>
+<li><strong>MariaDB</strong>: リレーショナルデータベース
+<ul>
+<li>ユーザー情報、投稿、コメントの管理</li>
+</ul>
+</li>
+</ul>
+<h3>ビルドツール・サーバー</h3>
+<ul>
+<li><strong>Maven 3.6以上</strong>: プロジェクトのビルドと依存関係管理</li>
+<li><strong>Apache Tomcat 7</strong>: アプリケーションサーバー</li>
+</ul>
+<h3>その他の技術</h3>
+<ul>
+<li><strong>Apache Commons FileUpload</strong>: ファイルアップロード処理</li>
+<li><strong>Jackson</strong>: JSON処理</li>
+<li><strong>SLF4J + Logback</strong>: ロギング</li>
+</ul>
+<h2>💡 こだわったポイント・技術的な挑戦</h2>
+<h3>1. MVCアーキテクチャの実装</h3>
+<ul>
+<li><strong>明確な責務分離</strong>: Controller、Service、DAO層を明確に分離し、保守性の高いコード構造を実現</li>
+<li><strong>トランザクション管理</strong>: Springのトランザクション管理機能を活用し、データ整合性を保証</li>
+</ul>
+<h3>2. セキュリティ対策</h3>
+<ul>
+<li><strong>iframe sandbox属性の活用</strong>: ユーザーが投稿したゲームコードを安全に実行するため、iframeのsandbox属性を使用
+<ul>
+<li><code>allow-scripts</code>: JavaScript実行を許可</li>
+<li><code>allow-forms</code>: フォーム送信を許可</li>
+<li><code>allow-popups</code>: ポップアップを許可</li>
+<li><code>allow-modals</code>: モーダルダイアログを許可</li>
+<li><code>allow-same-origin</code>は意図的に除外し、セキュリティを強化</li>
+</ul>
+</li>
+</ul>
+<h3>3. 画像アップロード機能の実装</h3>
+<ul>
+<li><strong>ファイル検証</strong>: 画像ファイルのみを許可（JPG, PNG, GIF, WebP, BMP）</li>
+<li><strong>UUIDによる一意なファイル名生成</strong>: ファイル名の衝突を防止</li>
+<li><strong>動的画像配信</strong>: ImageControllerによる画像の動的配信</li>
+<li><strong>Tomcat 7互換性</strong>: <code>setContentLengthLong</code>メソッドが使用できないため、<code>setContentLength</code>を使用するなど、サーバー互換性を考慮</li>
+</ul>
+<h3>4. ゲームコード実行機能の実装</h3>
+<ul>
+<li><strong>完全なHTMLドキュメントのサポート</strong>: ユーザーが投稿した完全なHTMLドキュメントをiframe内で実行</li>
+<li><strong>動的ロード</strong>: JavaScriptによる安全なコードの動的読み込み</li>
+<li><strong>ソースコード表示</strong>: 投稿されたゲームコードを閲覧可能にする機能</li>
+</ul>
+<h3>5. ユーザー体験の向上</h3>
+<ul>
+<li><strong>レスポンシブデザイン</strong>: モバイルデバイスでも快適に閲覧可能</li>
+<li><strong>視覚的なUI</strong>: モダンなデザインと直感的な操作</li>
+<li><strong>エラーハンドリング</strong>: 適切なエラーメッセージの表示</li>
+</ul>
+<h2>📁 プロジェクト構造</h2>
+<pre><code>backend_project/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/community/
+│   │   │       ├── controller/    # コントローラー層（リクエスト処理）
+│   │   │       │   ├── HomeController.java
+│   │   │       │   ├── UserController.java
+│   │   │       │   ├── PostController.java
+│   │   │       │   ├── CommentController.java
+│   │   │       │   └── ImageController.java
+│   │   │       ├── service/       # サービス層（ビジネスロジック）
+│   │   │       │   ├── UserService.java
+│   │   │       │   ├── PostService.java
+│   │   │       │   └── CommentService.java
+│   │   │       ├── dao/          # データアクセス層（DAO）
+│   │   │       │   ├── UserDao.java
+│   │   │       │   ├── PostDao.java
+│   │   │       │   └── CommentDao.java
+│   │   │       ├── model/        # モデルクラス（エンティティ）
+│   │   │       │   ├── User.java
+│   │   │       │   ├── Post.java
+│   │   │       │   └── Comment.java
+│   │   │       └── util/         # ユーティリティクラス
+│   │   │           └── FileUploadUtil.java
+│   │   ├── resources/
+│   │   │   ├── schema.sql        # データベーススキーマ
+│   │   │   └── data.sql          # 初期データ
+│   │   └── webapp/
+│   │       ├── WEB-INF/
+│   │       │   ├── web.xml       # Webアプリケーション設定
+│   │       │   ├── spring/
+│   │       │   │   ├── root-context.xml      # Springルートコンテキスト
+│   │       │   │   └── appServlet/
+│   │       │   │       └── servlet-context.xml  # Spring MVC設定
+│   │       │   └── views/        # JSPビューファイル
+│   │       │       ├── home.jsp
+│   │       │       ├── layout/
+│   │       │       ├── post/
+│   │       │       └── user/
+│   │       └── resources/        # 静的リソース（画像など）
+│   └── test/
+└── pom.xml                        # Maven設定ファイル
+</code></pre>
+<h2>🚀 実行方法</h2>
+<h3>前提条件</h3>
+<ul>
+<li>JDK 11以上</li>
+<li>Maven 3.6以上</li>
+<li>MariaDB（データベース）</li>
+<li>Apache Tomcat 7以上</li>
+</ul>
+<h3>STS(Spring Tool Suite)での実行方法</h3>
+<h4>1. プロジェクトのインポート</h4>
+<ol>
+<li>STSを起動</li>
+<li><code>File</code> → <code>Import</code> → <code>Maven</code> → <code>Existing Maven Projects</code></li>
+<li>プロジェクトルートディレクトリを選択</li>
+<li><code>Maven</code> → <code>Update Project...</code>で依存関係をダウンロード</li>
+</ol>
+<h4>2. データベース設定</h4>
+<pre><code class="language-sql">CREATE DATABASE communitydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+</code></pre>
+<h4>3. サーバー設定</h4>
+<ol>
+<li><code>Servers</code>タブでTomcatサーバーを追加</li>
+<li>プロジェクトをサーバーに追加</li>
+<li>サーバーを起動</li>
+</ol>
+<h4>4. ブラウザでアクセス</h4>
+<pre><code>http://localhost:8080
+</code></pre>
+<h3>コマンドラインでの実行</h3>
+<pre><code class="language-bash"># Windows
+run.bat
+
+# PowerShell
+run.ps1
+
+# または直接Mavenコマンド
+mvn clean package tomcat7:run
+</code></pre>
+<h2>📊 データベース設計</h2>
+<h3>データベース作成</h3>
+<pre><code class="language-sql">-- データベース作成
+CREATE DATABASE communitydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- データベース使用
+USE communitydb;
+</code></pre>
+<h3>テーブル構成</h3>
+<h4>1. usersテーブル（ユーザー情報）</h4>
+<pre><code class="language-sql">CREATE TABLE IF NOT EXISTS users (
+    user_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    nickname VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+</code></pre>
+<p><strong>カラム説明</strong>:</p>
+<ul>
+<li><code>user_id</code>: ユーザーID（主キー、自動増分）</li>
+<li><code>username</code>: ユーザー名（一意制約）</li>
+<li><code>password</code>: パスワード</li>
+<li><code>email</code>: メールアドレス</li>
+<li><code>nickname</code>: ニックネーム</li>
+<li><code>created_at</code>: 作成日時</li>
+<li><code>updated_at</code>: 更新日時</li>
+</ul>
+<h4>2. postsテーブル（投稿情報）</h4>
+<pre><code class="language-sql">CREATE TABLE IF NOT EXISTS posts (
+    post_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    title VARCHAR(200) NOT NULL,
+    content TEXT NOT NULL,
+    game_code TEXT,
+    image_url VARCHAR(500),
+    view_count INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+</code></pre>
+<p><strong>カラム説明</strong>:</p>
+<ul>
+<li><code>post_id</code>: 投稿ID（主キー、自動増分）</li>
+<li><code>user_id</code>: ユーザーID（外部キー、usersテーブル参照）</li>
+<li><code>title</code>: 投稿タイトル</li>
+<li><code>content</code>: 投稿本文</li>
+<li><code>game_code</code>: ゲームコード（HTML/CSS/JavaScript）</li>
+<li><code>image_url</code>: 画像URL（サムネイル用）</li>
+<li><code>view_count</code>: 閲覧数（デフォルト: 0）</li>
+<li><code>created_at</code>: 作成日時</li>
+<li><code>updated_at</code>: 更新日時</li>
+</ul>
+<h4>3. commentsテーブル（コメント情報）</h4>
+<pre><code class="language-sql">CREATE TABLE IF NOT EXISTS comments (
+    comment_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    post_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (post_id) REFERENCES posts(post_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+</code></pre>
+<p><strong>カラム説明</strong>:</p>
+<ul>
+<li><code>comment_id</code>: コメントID（主キー、自動増分）</li>
+<li><code>post_id</code>: 投稿ID（外部キー、postsテーブル参照）</li>
+<li><code>user_id</code>: ユーザーID（外部キー、usersテーブル参照）</li>
+<li><code>content</code>: コメント内容</li>
+<li><code>created_at</code>: 作成日時</li>
+<li><code>updated_at</code>: 更新日時</li>
+</ul>
+<h3>インデックス作成</h3>
+<pre><code class="language-sql">-- パフォーマンス向上のためのインデックス
+CREATE INDEX idx_posts_user_id ON posts(user_id);
+CREATE INDEX idx_posts_created_at ON posts(created_at DESC);
+CREATE INDEX idx_comments_post_id ON comments(post_id);
+CREATE INDEX idx_comments_user_id ON comments(user_id);
+</code></pre>
+<h3>ER図（テーブル関係）</h3>
+<pre><code>users (1) ──────&lt; (N) posts
+                      │
+                      │ (1)
+                      │
+                      │
+                      └───────&lt; (N) comments
+                      │
+users (1) ────────────┘
+</code></pre>
+<p><strong>リレーションシップ</strong>:</p>
+<ul>
+<li><code>users</code> と <code>posts</code>: 1対多（1人のユーザーが複数の投稿を作成可能）</li>
+<li><code>posts</code> と <code>comments</code>: 1対多（1つの投稿に複数のコメントが可能）</li>
+<li><code>users</code> と <code>comments</code>: 1対多（1人のユーザーが複数のコメントを投稿可能）</li>
+</ul>
+<h3>外部キー制約</h3>
+<ul>
+<li><strong>CASCADE削除</strong>: ユーザーが削除されると、そのユーザーの投稿とコメントも自動的に削除される</li>
+<li><strong>データ整合性</strong>: 外部キー制約により、存在しないユーザーIDや投稿IDへの参照を防止</li>
+</ul>
+<h3>サンプルデータ（テスト用）</h3>
+<pre><code class="language-sql">-- テスト用ユーザーデータ
+INSERT INTO users (username, password, email, nickname) VALUES
+('admin', 'admin123', 'admin@example.com', '管理者'),
+('user1', 'user123', 'user1@example.com', 'ユーザー1'),
+('user2', 'user123', 'user2@example.com', 'ユーザー2');
+
+-- テスト用投稿データ
+INSERT INTO posts (user_id, title, content, view_count) VALUES
+(1, 'コミュニティへようこそ！', 'こちらはコミュニティサイトです。自由に投稿してください。', 10),
+(2, '最初の投稿です', 'こんにちは！最初の投稿を書きました。', 5),
+(3, 'Spring MVCについて', 'Spring MVCフレームワークを使用してこのサイトを作成しました。', 8);
+
+-- テスト用コメントデータ
+INSERT INTO comments (post_id, user_id, content) VALUES
+(1, 2, 'ようこそ！'),
+(1, 3, '良いコミュニティですね。'),
+(2, 1, '最初の投稿おめでとうございます！');
+</code></pre>
+<h2>🎓 学習したスキル・技術</h2>
+<h3>Webアプリケーション開発の基本スキル</h3>
+<ul>
+<li>✅ <strong>ログイン機能の実装</strong>: セッション管理による認証機能</li>
+<li>✅ <strong>フォーム処理</strong>: POST/GETリクエストの処理、バリデーション</li>
+<li>✅ <strong>データベース機能</strong>: JDBCを使用したCRUD操作</li>
+<li>✅ <strong>セキュリティ機能</strong>: iframe sandboxによる安全なコード実行</li>
+<li>✅ <strong>ファイルアップロード</strong>: マルチパートファイルの処理</li>
+<li>✅ <strong>テンプレート機能</strong>: JSPによる動的コンテンツ生成</li>
+</ul>
+<h3>アーキテクチャ・設計パターン</h3>
+<ul>
+<li>✅ <strong>MVCパターン</strong>: 責務の明確な分離</li>
+<li>✅ <strong>DAOパターン</strong>: データアクセス層の抽象化</li>
+<li>✅ <strong>サービス層パターン</strong>: ビジネスロジックの集約</li>
+</ul>
+<h2>🔧 開発で苦労した点・解決方法</h2>
+<h3>1. 画像サムネイル機能の実装</h3>
+<p><strong>問題</strong>: 画像が正しく表示されない（500エラー）
+<strong>解決方法</strong>:</p>
+<ul>
+<li><code>servlet-context.xml</code>の誤った<code>mvc:resources</code>設定を削除</li>
+<li><code>ImageController</code>による動的画像配信を実装</li>
+<li>Tomcat 7互換性のため<code>setContentLengthLong</code>を<code>setContentLength</code>に変更</li>
+</ul>
+<h3>2. iframe sandboxのセキュリティ警告</h3>
+<p><strong>問題</strong>: <code>allow-scripts</code>と<code>allow-same-origin</code>の組み合わせによるセキュリティ警告
+<strong>解決方法</strong>:</p>
+<ul>
+<li><code>allow-same-origin</code>を削除し、セキュリティを強化</li>
+<li>ゲームコードが外部リソースにアクセスしない前提で実装</li>
+</ul>
+<h3>3. 完全なHTMLドキュメントの実行</h3>
+<p><strong>問題</strong>: ユーザーが投稿した完全なHTMLドキュメントがiframe内で正しく実行されない
+<strong>解決方法</strong>:</p>
+<ul>
+<li>JavaScriptによる動的なコード読み込みを実装</li>
+<li>hidden textareaを使用して安全にコードを渡す方法を採用</li>
+</ul>
+<h2>📝 今後の改善予定</h2>
+<ul>
+<li>[ ] パスワードのハッシュ化（現在は平文保存）</li>
+<li>[ ] ページネーション機能の追加</li>
+<li>[ ] 検索機能の実装</li>
+<li>[ ] いいね機能の追加</li>
+<li>[ ] ユーザー間のフォロー機能</li>
+</ul>
+<h2>📄 ライセンス</h2>
+<p>このプロジェクトは教育目的で作成されました。</p>
+<h2>👤 開発者</h2>
+<p>このプロジェクトは、Webアプリケーション開発の基本スキルを学習するために作成されました。</p>
+<hr>
+<p><strong>ポートフォリオとしての位置づけ</strong>:
+このプロジェクトは、実務経験はありませんが、Webアプリケーション開発に必要な基本スキル（ログイン機能、フォーム処理、データベース操作、セキュリティ対策など）を有していることを示すために作成しました。現在のWebシステムで広く使用されている技術を実践的に学習し、独自の機能（ゲームコード実行機能）も追加することで、技術力と創造性をアピールできる作品となっています。</p>
+
+</body>
+</html>
